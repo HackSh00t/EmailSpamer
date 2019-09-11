@@ -53,7 +53,11 @@
             this.txtreciver6 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblLeft = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.delay = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.spam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delay)).BeginInit();
             this.SuspendLayout();
             // 
             // IbkEmail
@@ -171,7 +175,7 @@
             // 
             this.btnsend.Location = new System.Drawing.Point(630, 400);
             this.btnsend.Name = "btnsend";
-            this.btnsend.Size = new System.Drawing.Size(158, 23);
+            this.btnsend.Size = new System.Drawing.Size(158, 57);
             this.btnsend.TabIndex = 14;
             this.btnsend.Text = "Send Email";
             this.btnsend.UseVisualStyleBackColor = true;
@@ -195,9 +199,24 @@
             this.spam.AllowDrop = true;
             this.spam.Cursor = System.Windows.Forms.Cursors.Cross;
             this.spam.Location = new System.Drawing.Point(101, 403);
+            this.spam.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.spam.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spam.Name = "spam";
-            this.spam.Size = new System.Drawing.Size(460, 20);
+            this.spam.Size = new System.Drawing.Size(410, 20);
             this.spam.TabIndex = 17;
+            this.spam.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spam.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // txtreciver2
@@ -249,17 +268,59 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(567, 405);
+            this.label7.Location = new System.Drawing.Point(517, 422);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.Size = new System.Drawing.Size(28, 13);
             this.label7.TabIndex = 24;
-            this.label7.Text = "Emails left";
+            this.label7.Text = "Left:";
+            // 
+            // lblLeft
+            // 
+            this.lblLeft.AutoSize = true;
+            this.lblLeft.Location = new System.Drawing.Point(584, 422);
+            this.lblLeft.Name = "lblLeft";
+            this.lblLeft.Size = new System.Drawing.Size(0, 13);
+            this.lblLeft.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 431);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Delay(miliseconds)";
+            // 
+            // delay
+            // 
+            this.delay.Location = new System.Drawing.Point(101, 429);
+            this.delay.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
+            this.delay.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.delay.Name = "delay";
+            this.delay.Size = new System.Drawing.Size(410, 20);
+            this.delay.TabIndex = 27;
+            this.delay.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 466);
+            this.Controls.Add(this.delay);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblLeft);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtreciver6);
@@ -287,6 +348,7 @@
             this.Name = "Form1";
             this.Text = "EmailSpamer";
             ((System.ComponentModel.ISupportInitialize)(this.spam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +380,9 @@
         private System.Windows.Forms.TextBox txtreciver6;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblLeft;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown delay;
     }
 }
 

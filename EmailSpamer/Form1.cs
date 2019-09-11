@@ -81,6 +81,7 @@ namespace EmailSpamer
 
                 int spm = 0;
                 Decimal Spam = spam.Value;
+                Decimal Delay = delay.Value;
 
                 if (txtreciver2.Text != "")
                 {
@@ -112,13 +113,13 @@ namespace EmailSpamer
                     client.Send(message); //Sending
 
                     int spmNum = (int)Spam - spm;
-                    label7.Text = "";
-                    label7.Text = spmNum.ToString();
-                    System.Threading.Thread.Sleep(50);
+                    lblLeft.Text = spmNum.ToString();
+                    System.Threading.Thread.Sleep((int)Delay);
                     
                     spm = spm + 1;
                 }
                 spm = 0;
+                lblLeft.Text = "0";
 
                 message = null; //freeing the memory of message
 
@@ -133,7 +134,7 @@ namespace EmailSpamer
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
